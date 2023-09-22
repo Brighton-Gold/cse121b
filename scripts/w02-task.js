@@ -2,11 +2,16 @@
 
 /* Step 1 - Setup type tasks - no code required */
 
+/* Step 5 - Array */
+
+
+let foodItem = "steak";
+let favFood = ["pizza", "sushi", "chocolate", "strawberries"]
 
 /* Step 2 - Variables */
 let fullname = 'Brighton M. Gold';
-let currentYear = date.year();
-let profilePicture = 'C:\Users\brigh\Documents\cse121b\images\IMG_7049.jpg';
+let currentYear = new Date().getFullYear();
+let profilePicture =  `../images/IMG_7049.jpg`;
 
 
 /* Step 3 - Element Variables */
@@ -14,24 +19,29 @@ let profilePicture = 'C:\Users\brigh\Documents\cse121b\images\IMG_7049.jpg';
 const nameElement = document.getElementById('name');
 const foodElement = document.getElementById('food');
 const yearElement = document.querySelector("#year");
-const imageElement = document.querySelector('photo')
+const imageElement = document.querySelector('img');
 
 
 
 /* Step 4 - Adding Content */
 
-nameElement.innerHTML = <strong>${fullname}</strong>;
-foodElement.innerHTML = <strong>${favFood[2]}</strong>;
-textContent.innerHTML = <strong>${currentYear}</strong>;
+nameElement.innerHTML = `<strong>${fullname}</strong>`;
+
+foodElement.innerHTML = `<br>${favFood}`;
+
+favFood.push(foodItem);
+foodElement.innerHTML += `<br>${favFood}`;
+favFood.shift();
+foodElement.innerHTML += `<br>${favFood}`;
+favFood.pop();
+foodElement.innerHTML += `<br>${favFood}`;
+
+yearElement.innerHTML =  `<strong>${currentYear}</strong>`;
 imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute('src', "Profile image of Brighton Gold");
+imageElement.setAttribute('alt', `Profile image of Brighton Gold`);
 
 
 
-/* Step 5 - Array */
 
-
-
-favFood = [pizza, sushi, chocolate, strawberries]
 
 
