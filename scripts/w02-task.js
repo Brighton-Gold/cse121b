@@ -11,7 +11,7 @@ let favFood = ["pizza", "sushi", "chocolate", "strawberries"]
 /* Step 2 - Variables */
 let fullname = 'Brighton M. Gold';
 let currentYear = new Date().getFullYear();
-let profilePicture =  `../images/a.png`;
+let profilePicture =  `images/a.png`;
 
 
 /* Step 3 - Element Variables */
