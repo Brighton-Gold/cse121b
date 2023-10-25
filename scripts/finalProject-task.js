@@ -1,11 +1,8 @@
+import capitalizeString from './capitalizeString.js';
+
+
 const pokeDex = document.getElementById(`pokeDex`);
 let pokemonList = []
-
-//This will capitalize the First letter of every string passed into it. 
-// Makes everything prettier.
-function capitalizeString(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
 // Each pokemon has it's name, and then another url pointing towards more information about the pokemon.
 // This function will get the info from that second URL.
