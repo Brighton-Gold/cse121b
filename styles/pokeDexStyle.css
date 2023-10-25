@@ -1,0 +1,19 @@
+#pokeDex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+article {
+  flex: 0 1 calc(33.3333% - 10px); /* Three items per row, 10px for margin */
+  margin: 5px;
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.type-margin {
+  margin-right: 10px;
+}

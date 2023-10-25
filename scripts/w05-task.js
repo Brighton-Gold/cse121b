@@ -6,7 +6,7 @@ let templeList = [];
 
 /* async displayTemples Function */
 
-const displayTemples = (temples) => {
+const displayTemples = (temples) => {console.log(temples)
     temples.forEach((temple) => {
         let articleElement = document.createElement('article');
 

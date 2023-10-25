@@ -64,6 +64,15 @@ const currentYear = today.getFullYear();
 
 document.querySelector('#year').value = currentYear;
 
+let pagination = 10;
+let i = 1;
+while ( i >= pagination ) {
+    console.log('hi');
+
+    console.log(`pass ${i}`);
+    i++;
+}
+console.log(i);
 
 
 /* ARRAY METHODS - Functional Programming */
