@@ -2,6 +2,7 @@ const pokeDex = document.getElementById(`pokeDex`);
 let pokemonList = []
 
 //This will capitalize the First letter of every string passed into it. 
+// Makes everything prettier.
 function capitalizeString(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -28,8 +29,9 @@ async function fetchKantoPokemon(type) {
 // This will start the process of displaying the pokemon.
 function renderPokemon(pokeData, type) {
 
-    let validType = false;   // based on the searchby value, this will filter the pokemon. 
-    if (type != `all`) {
+    let validType = false;   // based on the searchby value, this will filter the pokemon. If all pokemon are wanted, 
+                             // then validType will be set to True
+    if (type != `all`) {     // however, if a special type is needed, the code will compare every type the pokemon has to the required 
         for (const typeObj of pokeData.types) {
 
             if (type === typeObj.type.name) {
@@ -43,7 +45,7 @@ function renderPokemon(pokeData, type) {
         validType = true;
     }
 
-    if (validType) {
+    if (validType) {  //the pokemon "card" is created here. Number and name are on the same line, with types below it. 
 
         let name = document.createElement(`h3`);
         let pokemonCard = document.createElement(`article`);
@@ -76,12 +78,11 @@ function renderPokemon(pokeData, type) {
         pokemonCard.appendChild(pokemonType);
 
         pokemonList.push(pokemonCard);
-
-        //pokeDex.appendChild(pokemonCard);
     }
 
 }
 
+//In order to organize the pokemon by number, this function checks the name starting at 1 until a space is reached
 function sortPokemon() {
     pokemonList.sort((a, b) => {
         const numA = parseInt(a.querySelector('h3').textContent.slice(1).split(' ')[0]);
@@ -90,7 +91,7 @@ function sortPokemon() {
     });
 }
 
-/* reset Function */
+//Clears the screen of pokemon and the pokemonList as well
 const reset = () => {
     const pokemons = pokeDex.querySelectorAll('article');
 
@@ -101,7 +102,8 @@ const reset = () => {
     pokemonList = [];
 }
 
-
+//Determines what to filter the pokemon by based on the drop down bar. Will then recall the
+// fetchKantoPokemon function and pass in the new type. 
 function filterBy() {
     reset();
 
@@ -178,6 +180,6 @@ function filterBy() {
 
 }
 
-fetchKantoPokemon(`all`);
+fetchKantoPokemon(`all`); //initialize the program
 
 document.querySelector(`#sortBy`).addEventListener(`change`, () => { filterBy() });
